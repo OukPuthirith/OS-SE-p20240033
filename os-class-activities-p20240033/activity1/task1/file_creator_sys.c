@@ -4,24 +4,24 @@
 #include <string.h>   // strlen()
 
 int main() {
-    // YOUR CODE HERE
-    // 1. Open/create "output.txt" using open()
+    const char *text = "Hello from Operating Systems class!\n";
+    const char *msg = "File created successfully!\n";
+
+    // 1. Open/create "output.txt"
     int fd = open("output.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
-    if (fd == -1) {
-        write(STDERR_FILENO, "Error opening file\n", 19);
+    if (fd < 0) {
+        write(2, "Error opening file\n", 19);
         return 1;
     }
-    
-    // 2. Write "Hello from Operating Systems class!\n" using write()
-    char *message = "Hello from Operating Systems class!\n";
-    write(fd, message, strlen(message));
-    
-    // 3. Close the file using close()
+
+    // 2. Write text to the file
+    write(fd, text, strlen(text));
+
+    // 3. Close the file
     close(fd);
-    
-    // 4. Print "File created successfully!\n" to the terminal using write()
-    char *success_msg = "File created successfully!\n";
-    write(STDOUT_FILENO, success_msg, strlen(success_msg));
-    
+
+    // 4. Print confirmation to terminal
+    write(1, msg, strlen(msg));
+
     return 0;
 }
