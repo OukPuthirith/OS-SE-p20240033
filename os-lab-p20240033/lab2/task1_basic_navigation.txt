@@ -1,0 +1,58 @@
+/home/bluem
+total 96
+drwxr-x--- 18 bluem bluem 4096 Mar 18 20:57 .
+drwxr-xr-x  3 root  root  4096 Mar 12 19:18 ..
+-rw-------  1 bluem bluem  708 Mar 17 21:44 .bash_history
+-rw-r--r--  1 bluem bluem  220 Mar 31  2024 .bash_logout
+-rw-r--r--  1 bluem bluem 3771 Mar 31  2024 .bashrc
+drwx------ 13 bluem bluem 4096 Mar 17 21:07 .cache
+drwx------ 17 bluem bluem 4096 Mar 17 21:15 .config
+drwxr-xr-x  2 bluem bluem 4096 Mar 14 23:44 Desktop
+drwxr-xr-x  2 bluem bluem 4096 Mar 12 19:20 Documents
+drwxr-xr-x  3 bluem bluem 4096 Mar 17 21:16 Downloads
+-rw-rw-r--  1 bluem bluem   60 Mar 17 14:17 .gitconfig
+-rw-------  1 bluem bluem   20 Mar 17 14:17 .lesshst
+drwx------  4 bluem bluem 4096 Mar 12 19:20 .local
+drwxr-xr-x  2 bluem bluem 4096 Mar 12 19:20 Music
+-rw-rw-r--  1 bluem bluem    0 Mar 18 20:57 os-se-
+drwxrwxr-x  4 bluem bluem 4096 Mar 17 14:47 os-se-p20240033
+drwxr-xr-x  2 bluem bluem 4096 Mar 12 19:20 Pictures
+drwx------  3 bluem bluem 4096 Mar 12 21:04 .pki
+-rw-r--r--  1 bluem bluem  807 Mar 31  2024 .profile
+drwxr-xr-x  2 bluem bluem 4096 Mar 12 19:20 Public
+drwx------  8 bluem bluem 4096 Mar 17 15:00 snap
+drwx------  2 bluem bluem 4096 Mar 12 19:20 .ssh
+-rw-r--r--  1 bluem bluem    0 Mar 12 19:21 .sudo_as_admin_successful
+drwxr-xr-x  2 bluem bluem 4096 Mar 12 19:20 Templates
+drwxr-xr-x  2 bluem bluem 4096 Mar 12 19:20 Videos
+drwxrwxr-x  4 bluem bluem 4096 Mar 12 21:04 .vscode
+--- Root directory (/) ---
+/
+bin
+bin.usr-is-merged
+boot
+cdrom
+dev
+etc
+home
+lib
+lib64
+lib.usr-is-merged
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+sbin.usr-is-merged
+snap
+srv
+swap.img
+sys
+tmp
+usr
+var
+--- Back to home ---
+/home/bluem

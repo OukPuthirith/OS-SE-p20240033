@@ -1,0 +1,243 @@
+=== Task 6: Advanced Listing & Directory Audit ===
+--- Recursive Listing (ls -R) ---
+techcorp:
+engineering
+hr
+marketing
+
+techcorp/engineering:
+backend
+devops
+frontend
+
+techcorp/engineering/backend:
+app.js
+database.sql
+pipeline_backup.txt
+server_config.txt
+
+techcorp/engineering/devops:
+docker-compose.yml
+Dockerfile
+pipeline.txt
+security_audit.txt
+server_notice.txt
+
+techcorp/engineering/frontend:
+frontend_config.txt
+index.html
+style.css
+
+techcorp/hr:
+onboarding
+policies
+
+techcorp/hr/onboarding:
+checklist.txt
+handbook.txt
+leave_policy.txt
+welcome_guide.txt
+
+techcorp/hr/policies:
+leave_policy.txt
+remote_work.txt
+
+techcorp/marketing:
+assets
+campaigns
+
+techcorp/marketing/assets:
+banner.jpg
+brochure.pdf
+logo_brief.txt
+logo.png
+
+techcorp/marketing/campaigns:
+q1_2026_launch.txt
+social_media.txt
+
+--- Sort by Size: engineering/ (ls -lS) ---
+total 4
+-rw-rw-r-- 1 bluem bluem 26 Mar 18 21:55 frontend_config.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 index.html
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 style.css
+total 8
+-rw-rw-r-- 1 bluem bluem 29 Mar 28 23:42 pipeline_backup.txt
+-rw-rw-r-- 1 bluem bluem 29 Mar 18 21:56 server_config.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 app.js
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 database.sql
+total 12
+-rw-rw-r-- 1 bluem bluem 48 Mar 28 23:29 server_notice.txt
+-rw-rw-r-- 1 bluem bluem 34 Mar 28 23:41 security_audit.txt
+-rw-rw-r-- 1 bluem bluem 29 Mar 18 21:57 pipeline.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 docker-compose.yml
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 Dockerfile
+--- Sort by Time: techcorp/ (ls -lt) ---
+total 8
+-rw-rw-r-- 1 bluem bluem 32 Mar 18 21:31 remote_work.txt
+-rw-rw-r-- 1 bluem bluem 39 Mar 18 21:30 leave_policy.txt
+total 12
+-rw-rw-r-- 1 bluem bluem 39 Mar 28 23:35 leave_policy.txt
+-rw-rw-r-- 1 bluem bluem 23 Mar 28 23:29 handbook.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:33 checklist.txt
+-rw-rw-r-- 1 bluem bluem 52 Mar 18 21:33 welcome_guide.txt
+total 8
+-rw-rw-r-- 1 bluem bluem 35 Mar 18 21:59 social_media.txt
+-rw-rw-r-- 1 bluem bluem 32 Mar 18 21:59 q1_2026_launch.txt
+
+--- Human-Readable (ls -lh) ---
+total 4.0K
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 banner.jpg
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 brochure.pdf
+-rw-rw-r-- 1 bluem bluem 22 Mar 28 23:29 logo_brief.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 logo.png
+total 12K
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 docker-compose.yml
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 Dockerfile
+-rw-rw-r-- 1 bluem bluem 29 Mar 18 21:57 pipeline.txt
+-rw-rw-r-- 1 bluem bluem 34 Mar 28 23:41 security_audit.txt
+-rw-rw-r-- 1 bluem bluem 48 Mar 28 23:29 server_notice.txt
+
+--- Reverse Sort by Size (ls -rlS) ---
+total 8
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 database.sql
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 app.js
+-rw-rw-r-- 1 bluem bluem 29 Mar 18 21:56 server_config.txt
+-rw-rw-r-- 1 bluem bluem 29 Mar 28 23:42 pipeline_backup.txt
+
+--- Reverse Sort by Time (ls -rlt) ---
+total 12
+-rw-rw-r-- 1 bluem bluem 52 Mar 18 21:33 welcome_guide.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:33 checklist.txt
+-rw-rw-r-- 1 bluem bluem 23 Mar 28 23:29 handbook.txt
+-rw-rw-r-- 1 bluem bluem 39 Mar 28 23:35 leave_policy.txt
+
+--- Combined: Recursive + Human-Readable + Sort by Size (ls -lhRS) ---
+techcorp/:
+total 12K
+drwxrwxr-x 5 bluem bluem 4.0K Mar 18 21:28 engineering
+drwxrwxr-x 4 bluem bluem 4.0K Mar 18 21:28 hr
+drwxrwxr-x 4 bluem bluem 4.0K Mar 28 23:29 marketing
+
+techcorp/engineering:
+total 12K
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:42 backend
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:42 devops
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:43 frontend
+
+techcorp/engineering/backend:
+total 8.0K
+-rw-rw-r-- 1 bluem bluem 29 Mar 28 23:42 pipeline_backup.txt
+-rw-rw-r-- 1 bluem bluem 29 Mar 18 21:56 server_config.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 app.js
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 database.sql
+
+techcorp/engineering/devops:
+total 12K
+-rw-rw-r-- 1 bluem bluem 48 Mar 28 23:29 server_notice.txt
+-rw-rw-r-- 1 bluem bluem 34 Mar 28 23:41 security_audit.txt
+-rw-rw-r-- 1 bluem bluem 29 Mar 18 21:57 pipeline.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 docker-compose.yml
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 Dockerfile
+
+techcorp/engineering/frontend:
+total 4.0K
+-rw-rw-r-- 1 bluem bluem 26 Mar 18 21:55 frontend_config.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 index.html
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:56 style.css
+
+techcorp/hr:
+total 8.0K
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:35 onboarding
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:42 policies
+
+techcorp/hr/onboarding:
+total 12K
+-rw-rw-r-- 1 bluem bluem 52 Mar 18 21:33 welcome_guide.txt
+-rw-rw-r-- 1 bluem bluem 39 Mar 28 23:35 leave_policy.txt
+-rw-rw-r-- 1 bluem bluem 23 Mar 28 23:29 handbook.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:33 checklist.txt
+
+techcorp/hr/policies:
+total 8.0K
+-rw-rw-r-- 1 bluem bluem 39 Mar 18 21:30 leave_policy.txt
+-rw-rw-r-- 1 bluem bluem 32 Mar 18 21:31 remote_work.txt
+
+techcorp/marketing:
+total 8.0K
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:31 assets
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:43 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 bluem bluem 22 Mar 28 23:29 logo_brief.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 banner.jpg
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 brochure.pdf
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 bluem bluem 35 Mar 18 21:59 social_media.txt
+-rw-rw-r-- 1 bluem bluem 32 Mar 18 21:59 q1_2026_launch.txt
+
+--- Challenge Investigation ---
+6a. Newest file in onboarding/:
+total 12
+-rw-rw-r-- 1 bluem bluem 39 Mar 28 23:35 leave_policy.txt
+-rw-rw-r-- 1 bluem bluem 23 Mar 28 23:29 handbook.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:33 checklist.txt
+-rw-rw-r-- 1 bluem bluem 52 Mar 18 21:33 welcome_guide.txt
+6b. Recursive Marketing Audit (Human-Readable):
+techcorp/marketing/:
+total 8.0K
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:31 assets
+drwxrwxr-x 2 bluem bluem 4.0K Mar 28 23:43 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 banner.jpg
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 brochure.pdf
+-rw-rw-r-- 1 bluem bluem 22 Mar 28 23:29 logo_brief.txt
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:59 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 bluem bluem 32 Mar 18 21:59 q1_2026_launch.txt
+-rw-rw-r-- 1 bluem bluem 35 Mar 18 21:59 social_media.txt
+6c. DevOps files (Smallest to Largest):
+total 12
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 Dockerfile
+-rw-rw-r-- 1 bluem bluem  0 Mar 18 21:57 docker-compose.yml
+-rw-rw-r-- 1 bluem bluem 29 Mar 18 21:57 pipeline.txt
+-rw-rw-r-- 1 bluem bluem 34 Mar 28 23:41 security_audit.txt
+-rw-rw-r-- 1 bluem bluem 48 Mar 28 23:29 server_notice.txt
+6d. Home directory hidden files (Sorted by Size):
+total 116K
+-rw-------  1 bluem bluem 8.6K Mar 28 16:44 .bash_history
+-rw-------  1 bluem bluem 5.5K Mar 19 22:46 .viminfo
+drwxr-x--- 19 bluem bluem 4.0K Mar 19 22:46 .
+drwxr-xr-x  3 root  root  4.0K Mar 12 19:18 ..
+drwx------ 17 bluem bluem 4.0K Mar 28 14:41 .cache
+drwx------ 18 bluem bluem 4.0K Mar 28 14:41 .config
+drwxr-xr-x  2 bluem bluem 4.0K Mar 14 23:44 Desktop
+drwxr-xr-x  2 bluem bluem 4.0K Mar 12 19:20 Documents
+drwxrwxr-x  3 bluem bluem 4.0K Mar 19 16:47 .dotnet
+drwxr-xr-x  3 bluem bluem 4.0K Mar 28 16:01 Downloads
+drwx------  4 bluem bluem 4.0K Mar 12 19:20 .local
+drwxr-xr-x  2 bluem bluem 4.0K Mar 12 19:20 Music
+drwxrwxr-x  5 bluem bluem 4.0K Mar 19 10:17 os-se-p20240033
+drwxr-xr-x  3 bluem bluem 4.0K Mar 28 14:11 Pictures
+drwx------  3 bluem bluem 4.0K Mar 12 21:04 .pki
+drwxr-xr-x  2 bluem bluem 4.0K Mar 12 19:20 Public
+drwx------  8 bluem bluem 4.0K Mar 17 15:00 snap
+drwx------  2 bluem bluem 4.0K Mar 12 19:20 .ssh
+drwxr-xr-x  2 bluem bluem 4.0K Mar 12 19:20 Templates
+drwxr-xr-x  2 bluem bluem 4.0K Mar 12 19:20 Videos
+drwxrwxr-x  4 bluem bluem 4.0K Mar 12 21:04 .vscode
+-rw-r--r--  1 bluem bluem 3.7K Mar 31  2024 .bashrc
+-rw-r--r--  1 bluem bluem  807 Mar 31  2024 .profile
+-rw-r--r--  1 bluem bluem  220 Mar 31  2024 .bash_logout
+-rw-rw-r--  1 bluem bluem   60 Mar 17 14:17 .gitconfig
+-rw-------  1 bluem bluem   20 Mar 17 14:17 .lesshst
+-rw-rw-r--  1 bluem bluem    0 Mar 18 20:57 os-se-
+-rw-r--r--  1 bluem bluem    0 Mar 12 19:21 .sudo_as_admin_successful
