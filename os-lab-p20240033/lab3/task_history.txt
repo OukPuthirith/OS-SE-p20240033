@@ -1,0 +1,101 @@
+=== Full Command History ===
+
+// Returns the number of CPU cores
+int tc_get_cpu_count(void);
+
+#endif
+EOF
+
+  854  echo "--- API Design (header file) ---" >> ../task5_shared_library.txt
+  855  cat techcorp_sysinfo.h >> ../task5_shared_library.txt
+  856  cat > sysinfo_test.c << 'EOF'
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("===================================\n");
+    return 0;
+}
+EOF
+
+  857  echo "" >> ../task5_shared_library.txt
+  858  echo "--- Partner B: Test program written ---" >> ../task5_shared_library.txt
+  859  cat sysinfo_test.c >> ../task5_shared_library.txt
+  860  gcc sysinfo_test.c -L. -ltechcorp_sysinfo -o sysinfo_test
+  861  echo "" >> ../task5_shared_library.txt
+  862  echo "--- Integration: ldd on test program (before install) ---" >> ../task5_shared_library.txt
+  863  ldd ./sysinfo_test >> ../task5_shared_library.txt 2>&1
+  864  echo "" >> ../task5_shared_library.txt
+  865  echo "--- Integration: Test run (using LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  866  LD_LIBRARY_PATH=. ./sysinfo_test >> ../task5_shared_library.txt
+  867  cat > techcorp_sysinfo.h << 'EOF'
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+const char* tc_get_hostname(void);
+const char* tc_get_uptime(void);
+int tc_get_cpu_count(void);
+
+// NEW — Returns total memory in MB
+long tc_get_memory_mb(void);
+
+#endif
+EOF
+
+  868  cat > techcorp_memory.c << 'EOF'
+#include "techcorp_sysinfo.h"
+#include <stdio.h>
+
+long tc_get_memory_mb(void) {
+    FILE *fp = fopen("/proc/meminfo", "r");
+    if (fp) {
+        long mem_kb = 0;
+        if (fscanf(fp, "MemTotal: %ld kB", &mem_kb) == 1) {
+            fclose(fp);
+            return mem_kb / 1024;
+        }
+        fclose(fp);
+    }
+    return -1;
+}
+EOF
+
+  869  gcc -fPIC -c techcorp_sysinfo.c -o techcorp_sysinfo.o
+  870  gcc -fPIC -c techcorp_memory.c -o techcorp_memory.o
+  871  gcc -shared -o libtechcorp_sysinfo.so techcorp_sysinfo.o techcorp_memory.o
+  872  echo "" >> ../task5_shared_library.txt
+  873  echo "--- Phase 4: Partner B recompiled library with new function ---" >> ../task5_shared_library.txt
+  874  file libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  875  sudo cp libtechcorp_sysinfo.so /usr/local/lib/
+  876  sudo ldconfig
+  877  echo "" >> ../task5_shared_library.txt
+  878  echo "--- System-wide install: ldconfig cache ---" >> ../task5_shared_library.txt
+  879  ldconfig -p | grep techcorp >> ../task5_shared_library.txt
+  880  echo "" >> ../task5_shared_library.txt
+  881  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  882  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  883  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  884  echo "" >> ../task5_shared_library.txt
+  885  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  886  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  887  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  888  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  889  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  890  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  891  sudo ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  892  gcc sysinfo_test_v2.c -L. -ltechcorp_sysinfo -o sysinfo_test_v2
+  893  echo "" >> ../task5_shared_library.txt
+  894  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  895  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  896  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  897  echo "" >> ../task5_shared_library.txt
+  898  echo "--- Pair Information ---" >> ../task5_shared_library.txt
+  899  echo "Role A (Library Author → v2 Tester): Rasmey Rithysak - p20240043" >> ../task5_shared_library.txt
+  900  echo "Role B (Test Author → v2 Library Extender): Ouk Puthirith - p20240033" >> ../task5_shared_library.txt
+  901  cd ..
+  902  echo "=== Full Command History ===" > task_history.txt
+  903  history | tail -n 100 >> task_history.txt

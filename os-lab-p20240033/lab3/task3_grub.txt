@@ -1,0 +1,247 @@
+=== Task 3: GRUB Bootloader Exploration ===
+--- Current kernel version ---
+6.17.0-19-generic
+
+--- GRUB directory lisitng ---
+total 2404
+drwxr-xr-x 5 root root    4096 Mar 18 21:07 .
+drwxr-xr-x 3 root root    4096 Mar 31 13:47 ..
+drwxr-xr-x 2 root root    4096 Mar 12 19:18 fonts
+-rw-r--r-- 1 root root     712 Mar 12 19:17 gfxblacklist.txt
+-rw------- 1 root root   10443 Mar 18 21:07 grub.cfg
+-rw-r--r-- 1 root root    1024 Apr  4 14:26 grubenv
+drwxr-xr-x 2 root root   12288 Mar 12 19:18 i386-pc
+drwxr-xr-x 2 root root    4096 Mar 12 19:18 locale
+-rw-r--r-- 1 root root 2411806 Mar 12 19:18 unicode.pf2
+
+--- GRUB config (/boot/grub/grub.cfg) - first 60 lines ---
+head: cannot open '/boot/grub/grub.cfg' for reading: Permission denied
+
+--- GRUB defaults (/etc/default/grub) ---
+# If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=0
+GRUB_DISTRIBUTOR=`( . /etc/os-release; echo ${NAME:-Ubuntu} ) 2>/dev/null || echo Ubuntu`
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_CMDLINE_LINUX=""
+
+# If your computer has multiple operating systems installed, then you
+# probably want to run os-prober. However, if your computer is a host
+# for guest OSes installed via LVM or raw disk devices, running
+# os-prober can cause damage to those guest OSes as it mounts
+# filesystems to look for things.
+#GRUB_DISABLE_OS_PROBER=false
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+
+# Uncomment to disable graphical terminal
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY="true"
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"
+
+--- Installed kernels in /boot ---
+lrwxrwxrwx 1 root root  25 Mar 18 21:07 /boot/vmlinuz -> vmlinuz-6.17.0-19-generic
+-rw------- 1 root root 16M Jan 15 21:20 /boot/vmlinuz-6.17.0-14-generic
+-rw------- 1 root root 16M Mar  7 04:18 /boot/vmlinuz-6.17.0-19-generic
+lrwxrwxrwx 1 root root  25 Mar 12 19:17 /boot/vmlinuz.old -> vmlinuz-6.17.0-14-generic
+lrwxrwxrwx 1 root root  28 Mar 18 21:07 /boot/initrd.img -> initrd.img-6.17.0-19-generic
+-rw-r--r-- 1 root root 75M Mar 12 19:18 /boot/initrd.img-6.17.0-14-generic
+-rw-r--r-- 1 root root 60M Mar 31 13:47 /boot/initrd.img-6.17.0-19-generic
+lrwxrwxrwx 1 root root  28 Mar 12 19:17 /boot/initrd.img.old -> initrd.img-6.17.0-14-generic
+
+--- Early kernel boot messages (first 40 lines) ---
+[    0.000000] Linux version 6.17.0-19-generic (buildd@lcy02-amd64-019) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #19~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar  6 23:08:46 UTC 2 (Ubuntu 6.17.0-19.19~24.04.2-generic 6.17.13)
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-6.17.0-19-generic root=UUID=6c44e85d-3838-4827-b4a7-1ab993dcaf76 ro quiet splash
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009e7ff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009e800-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000dc000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bfecffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bfed0000-0x00000000bfefefff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x00000000bfeff000-0x00000000bfefffff] ACPI NVS
+[    0.000000] BIOS-e820: [mem 0x00000000bff00000-0x00000000bfffffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000f0000000-0x00000000f7ffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec0ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffe0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 2.7 present.
+[    0.000000] DMI: VMware, Inc. VMware Virtual Platform/440BX Desktop Reference Platform, BIOS 6.00 11/12/2020
+[    0.000000] DMI: Memory slots populated: 1/128
+[    0.000000] vmware: hypercall mode: 0x02
+[    0.000000] Hypervisor detected: VMware
+[    0.000000] vmware: TSC freq read from hypervisor : 2419.200 MHz
+[    0.000000] vmware: Host bus clock speed read from hypervisor : 66000000 Hz
+[    0.000000] vmware: using clock offset of 4533157769 ns
+[    0.000009] tsc: Detected 2419.200 MHz processor
+[    0.002156] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.002158] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.002162] last_pfn = 0x140000 max_arch_pfn = 0x400000000
+[    0.002180] total RAM covered: 130048M
+[    0.002254] Found optimal setting for mtrr clean up
+[    0.002254]  gran_size: 64K 	chunk_size: 64K 	num_reg: 7  	lose cover RAM: 0G
+[    0.002257] MTRR map: 7 entries (5 fixed + 2 variable; max 21), built from 8 variable MTRRs
+[    0.002259] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+
+--- GRUB scripts in /etc/grub.d/ ---
+total 164
+drwxr-xr-x   2 root root  4096 Feb 10 07:33 .
+drwxr-xr-x 140 root root 12288 Mar 31 13:48 ..
+-rwxr-xr-x   1 root root 10661 Mar 17  2025 00_header
+-rwxr-xr-x   1 root root  6260 Mar 17  2025 05_debian_theme
+-rwxr-xr-x   1 root root 18133 Mar 17  2025 10_linux
+-rwxr-xr-x   1 root root 43202 Mar 17  2025 10_linux_zfs
+-rwxr-xr-x   1 root root 14513 Mar 17  2025 20_linux_xen
+-rwxr-xr-x   1 root root  4228 Apr  8  2024 20_memtest86+
+-rwxr-xr-x   1 root root   786 Mar 17  2025 25_bli
+-rwxr-xr-x   1 root root 13120 Mar 17  2025 30_os-prober
+-rwxr-xr-x   1 root root  1174 Mar 17  2025 30_uefi-firmware
+-rwxr-xr-x   1 root root   722 Nov 30 20:12 35_fwupd
+-rwxr-xr-x   1 root root   214 Mar 17  2025 40_custom
+-rwxr-xr-x   1 root root   215 Mar 17  2025 41_custom
+-rw-r--r--   1 root root   483 Mar 17  2025 README
+
+=== Part B: GRUB Customization ===
+--- Modified /etc/default/grub ---
+# If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=10
+GRUB_DISTRIBUTOR=`( . /etc/os-release; echo ${NAME:-Ubuntu} ) 2>/dev/null || echo Ubuntu`
+GRUB_CMDLINE_LINUX_DEFAULT=""
+GRUB_CMDLINE_LINUX=""
+
+# If your computer has multiple operating systems installed, then you
+# probably want to run os-prober. However, if your computer is a host
+# for guest OSes installed via LVM or raw disk devices, running
+# os-prober can cause damage to those guest OSes as it mounts
+# filesystems to look for things.
+#GRUB_DISABLE_OS_PROBER=false
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+
+# Uncomment to disable graphical terminal
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY="true"
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"
+
+--- Custom script /etc/grub.d/40_custom_techcorp ---
+#!/bin/sh
+exec tail -n +3 $0
+# Custom GRUB menu entry for TechCorp Training VM
+
+menuentry "TechCorp Training VM — Boot Standard" {
+    set root=(hd0,msdos1)
+    linux /boot/vmlinuz-6.17.0-19-generic root=/dev/sda1
+    initrd /boot/initrd.img-6.17.0-19-generic
+}
+
+--- Final /etc/default/grub (with background) ---
+# If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=10
+GRUB_DISTRIBUTOR=`( . /etc/os-release; echo ${NAME:-Ubuntu} ) 2>/dev/null || echo Ubuntu`
+GRUB_CMDLINE_LINUX_DEFAULT=""
+GRUB_CMDLINE_LINUX=""
+GRUB_BACKGROUND="/boot/grub/splash.tga"
+# If your computer has multiple operating systems installed, then you
+# probably want to run os-prober. However, if your computer is a host
+# for guest OSes installed via LVM or raw disk devices, running
+# os-prober can cause damage to those guest OSes as it mounts
+# filesystems to look for things.
+#GRUB_DISABLE_OS_PROBER=false
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+
+# Uncomment to disable graphical terminal
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY="true"
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"
+
+=== Part C: Boot Recovery ===
+Boot recovery successful on Sat Apr  4 08:45:49 PM +07 2026
+6.17.0-19-generic
+ 20:46:02 up 1 min,  1 user,  load average: 0.83, 0.45, 0.17
+
+=== Challenge GRUB ===
+
+--- 3a. Default Boot Entry ---
+Changed GRUB_DEFAULT from 0 to 1
+Second menu entry now boots by default
+
+--- 3b. Custom Color Scheme ---
+GRUB_COLOR_NORMAL="light-magenta/black"
+GRUB_COLOR_HIGHLIGHT="green/dark-gray"
+
+--- 3c. Root Partition UUID ---
+
+How GRUB uses UUID: GRUB passes the UUID to the kernel via the 'root=' parameter.
+The kernel then uses this UUID to locate and mount the correct root partition,
+even if device names (like /dev/sda1) change between boots.
