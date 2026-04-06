@@ -13,7 +13,7 @@ int main() {
     printf("Parent process (PID: %lu) — creating child...\n", GetCurrentProcessId());
 
     if (!CreateProcess(
-            "C:\\Windows\\System32\\mspaint.exe",
+            "C:\\Windows\\System32\\notepad.exe",
             NULL, NULL, NULL, FALSE, 0, NULL, NULL,
             &si, &pi))
     {
@@ -24,9 +24,14 @@ int main() {
     printf("Child process created!\n");
     printf("  Child PID:       %lu\n", pi.dwProcessId);
     printf("  Child Thread ID: %lu\n", pi.dwThreadId);
-    printf("Parent: waiting for child (mspaint) to exit...\n");
-    printf(">>> Open Task Manager NOW and take a screenshot! <<<\n");
-    printf(">>> Then close mspaint to let this program finish. <<<\n");
+    printf("Parent: sleeping 60 seconds — do your screenshots NOW!\n");
+    printf(">>> Open Task Manager and second CMD now! <<<\n");
+
+    /* Sleep 60 seconds so you have time to take screenshots */
+    Sleep(60000);
+
+    printf("Parent: now waiting for child (notepad) to exit...\n");
+    printf(">>> Close notepad to finish! <<<\n");
 
     WaitForSingleObject(pi.hProcess, INFINITE);
 
