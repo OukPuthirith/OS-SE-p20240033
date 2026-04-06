@@ -23,7 +23,17 @@ Screenshot of the parent-child process tree (using `ps --forest`, `pstree`, or `
 ### Output
 
 ```
-[Paste the content of result_forkchild.txt here]
+total 32
+drwxrwxr-x 2 bluem bluem  4096 Apr  6 14:36 .
+drwxrwxr-x 7 bluem bluem  4096 Apr  6 14:27 ..
+-rwxrwxr-x 1 bluem bluem 16400 Apr  6 14:35 forkchild
+-rw-rw-r-- 1 bluem bluem  1430 Apr  6 14:33 forkchild.c
+-rw-rw-r-- 1 bluem bluem     0 Apr  6 14:44 result_forkchild.txt
+Parent process (PID: 7217) — creating child...
+Parent: waiting for child (PID: 7218) to finish...
+Parent: child exited with status 0
+Parent: done.
+
 ```
 
 ### Questions
@@ -143,7 +153,10 @@ Screenshot of compiling and running `shm-producer` and `shm-consumer`:
 ### Output
 
 ```
-[Paste the content of result-shm-ipc.txt here]
+Consumer: reading from shared memory 'OS-puthirith'
+Consumer: message = "Hello, this is shared memory IPC!"
+Consumer: shared memory unlinked.
+
 ```
 
 ### Questions
@@ -186,7 +199,10 @@ Screenshot of compiling and running `sender` and `receiver`:
 ### Output
 
 ```
-[Paste the content of result-mq-ipc.txt here]
+Receiver: message received from queue '/queue-puthirith'
+Receiver: message = "Hello from sender! This is message queue IPC."
+Receiver: queue unlinked.
+
 ```
 
 ### Questions
