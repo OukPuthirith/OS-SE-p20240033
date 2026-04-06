@@ -1,0 +1,20 @@
+  982  git pull
+  983  ldconfig -p | grep techcorp
+  984  ldd ./sysinfo_test_v2
+  985  ./sysinfo_test_v2
+  986  cd os-se-p20240033/
+  987  git add 
+  988  git add .
+  989  git status
+  990  git commit -m"change a image"
+  991  git push 
+  992  ssh ssh2.rathpisey.site
+  993  ldconfig -p | grep techcorp
+  994  ldd ./sysinfo_test_v2
+  995  ./sysinfo_test_v2
+  996  gcc -o forkchild forkchild.c
+  997  cd task1
+  998  gcc -o forkchild forkchild.c
+  999  ./forkchild > result_forkchild.txt 2>&1
+ 1000  cat result_forkchild.txt
+ 1001  history | tail -n 20 > command_used_forkchild.txt
