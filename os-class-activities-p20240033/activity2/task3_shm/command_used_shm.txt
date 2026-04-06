@@ -1,0 +1,20 @@
+ 1036  cd task1
+ 1037  gcc -o forkchild forkchild.c
+ 1038  ./forkchild > result_forkchild.txt 2>&1
+ 1039  cat result_forkchild.txt
+ 1040  history | tail -n 20 > command_used_forkchild.txt
+ 1041  gcc -o winprocess winprocess.c
+ 1042  cd ../task2
+ 1043  cd os-se-p20240033/os-class-activities-p20240033/activity2
+ 1044  ls
+ 1045  cd task3_shm/
+ 1046  touch shm-producer.c
+ 1047  ls
+ 1048  touch shm-consumer.c
+ 1049  clear
+ 1050  gcc -o shm-producer shm-producer.c -lrt
+ 1051  gcc -o shm-consumer shm-consumer.c -lrt
+ 1052  ./shm-producer
+ 1053  ./shm-consumer > result-shm-ipc.txt
+ 1054  cat result-shm-ipc.txt
+ 1055  history | tail -n 20 > command_used_shm.txt
