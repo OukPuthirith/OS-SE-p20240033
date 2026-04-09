@@ -1,0 +1,20 @@
+ 1474  ls
+ 1475  cd os-class-activities-p20240033/
+ 1476  ls
+ 1477  mkdir activity3
+ 1478  ls
+ 1479  cd activity3
+ 1480  ls
+ 1481  pwd
+ 1482  $ cd activity3/task1_socket
+ 1483  mkdir task1_socket
+ 1484  ls
+ 1485  cd task1_socket/
+ 1486  nano server.c
+ 1487  nano client.c
+ 1488  gcc -o server server.c
+ 1489  ./server
+ 1490  ./server > result_server.txt 2>&1 &
+ 1491  sleep 1
+ 1492  cat result_server.txt result_client.txt > result_socket.txt
+ 1493  history | tail -n 20 > command_used_socket.txt

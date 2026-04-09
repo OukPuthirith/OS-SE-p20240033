@@ -1,0 +1,18 @@
+bluem      11265    5554   11265  0    5 22:40 pts/1    00:00:00 ./threads_observe
+bluem      11265    5554   11266  0    5 22:40 pts/1    00:00:00 ./threads_observe
+bluem      11265    5554   11267  0    5 22:40 pts/1    00:00:00 ./threads_observe
+bluem      11265    5554   11268  0    5 22:40 pts/1    00:00:00 ./threads_observe
+bluem      11265    5554   11269  0    5 22:40 pts/1    00:00:00 ./threads_observe
+bluem      11281    4938   11281  0    1 22:41 pts/0    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+  11265   11265 pts/1    00:00:00 threads_observe
+  11265   11266 pts/1    00:00:00 threads_observe
+  11265   11267 pts/1    00:00:00 threads_observe
+  11265   11268 pts/1    00:00:00 threads_observe
+  11265   11269 pts/1    00:00:00 threads_observe
+--- /proc/<PID>/task/ listing ---
+11265
+11266
+11267
+11268
+11269

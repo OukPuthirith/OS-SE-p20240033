@@ -1,0 +1,23 @@
+Main thread (ID: 1): starting...
+PID: 9751 — observe threads with ps or htop
+
+[Alpha] Count: 1 (Thread ID: 18)
+[Beta] Count: 1 (Thread ID: 19)
+[Gamma] Count: 1 (Thread ID: 20)
+[Alpha] Count: 2 (Thread ID: 18)
+[Beta] Count: 2 (Thread ID: 19)
+[Gamma] Count: 2 (Thread ID: 20)
+[Alpha] Count: 3 (Thread ID: 18)
+[Gamma] Count: 3 (Thread ID: 20)
+[Beta] Count: 3 (Thread ID: 19)
+[Alpha] Count: 4 (Thread ID: 18)
+[Gamma] Count: 4 (Thread ID: 20)
+[Beta] Count: 4 (Thread ID: 19)
+[Alpha] Count: 5 (Thread ID: 18)
+[Gamma] Count: 5 (Thread ID: 20)
+[Beta] Count: 5 (Thread ID: 19)
+[Alpha] Finished!
+[Gamma] Finished!
+[Beta] Finished!
+
+Main thread: all threads finished.

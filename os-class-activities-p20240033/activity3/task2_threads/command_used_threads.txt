@@ -1,0 +1,20 @@
+ 1486  nano server.c
+ 1487  nano client.c
+ 1488  gcc -o server server.c
+ 1489  ./server
+ 1490  ./server > result_server.txt 2>&1 &
+ 1491  sleep 1
+ 1492  cat result_server.txt result_client.txt > result_socket.txt
+ 1493  history | tail -n 20 > command_used_socket.txt
+ 1494  mkdir ../task2_threads
+ 1495  nano threads.c
+ 1496  $ gcc -o threads threads.c -pthread
+ 1497  gcc -o threads threads.c -pthread
+ 1498  ./threads > result_threads.txt 2>&1
+ 1499  cat result_threads.txt
+ 1500  cd ../task2_threads/
+ 1501  gcc -o threads_mutex threads_mutex.c -pthread
+ 1502  ./threads_mutex > result_threads_mutex.txt 2>&1
+ 1503  cat result_threads_mutex.txt
+ 1504  $ history | tail -n 20 > command_used_threads.txt
+ 1505  history | tail -n 20 > command_used_threads.txt

@@ -1,0 +1,30 @@
+ 1442  ps -o pid,ppid,stat,cmd -p <CHILD_PID>
+ 1443  ps -o pid,ppid,stat,cmd 
+ 1444  ps -p <CHILD_PID>
+ 1445  ps aux | grep -E 'Z|defunct'
+ 1446  ps -eo pid,ppid,stat,cmd | grep zombie_wait
+ 1447  ps aux | grep -E 'Z|defunct'
+ 1448  ps --forest -u $USER
+ 1449  clear
+ 1450  ./client
+ 1451  cd os-se-p20240033/os-class-activities-p20240033/
+ 1452  ls
+ 1453  cd activity3
+ 1454  ls
+ 1455  cd task1_socket/
+ 1456  ./client
+ 1457  ./client > result_client.txt 2>&1
+ 1458  wait
+ 1459  cd ../task2_threads/
+ 1460  nano threads_mutex.c
+ 1461  nano RunnableDemo.java
+ 1462  javac RunnableDemo.java
+ 1463  java RunnableDemo > result_runnable_demo.txt 2>&1
+ 1464  cd ../task3_java/
+ 1465  nano PoolDemo.java
+ 1466  javac PoolDemo.java
+ 1467  java PoolDemo > result_pool_demo.txt 2>&1
+ 1468  clear
+ 1469  cat result_pool_demo.txt
+ 1470  $ history | tail -n 30 > command_used_java.txt
+ 1471  history | tail -n 30 > command_used_java.txt
