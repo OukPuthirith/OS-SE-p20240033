@@ -1,0 +1,18 @@
+=== Task 5: Orphan & Zombie Processes ===
+--- Orphan process observation ---
+Child PID: <FILL_IN>, Original PPID: <FILL_IN>, New PPID after parent exit: 1
+--- Zombie process observation ---
+Zombie PID: <FILL_IN>, State: Z (defunct), Parent PID: <FILL_IN>
+--- Zombie and Orphan Cleanup Notes ---
+Q: How are orphans cleaned up? A: Adopted by init (PID 1), which waits for them when they exit.
+Q: How are zombies cleaned up? A: When the parent calls wait(), or when the parent dies (init cleans up).
+Q: Can you kill a zombie with kill -9? A: No — the zombie is already dead. It has no running code to receive a signal. Only the parent calling wait() removes it from the process table.
+--- Challenge 5a: zombie_wait observation ---
+Before wait(): child appeared as Z (zombie/defunct) in ps output
+After parent called wait(): zombie entry disappeared from process table
+Conclusion: wait() is what prevents zombie accumulation in real programs
+--- Challenge 5b: three children observation ---
+Parent PID: <FILL_IN>
+Child 1 PID: <FILL_IN>, Child 2 PID: <FILL_IN>, Child 3 PID: <FILL_IN>
+Parent called wait() 3 times - no zombies created
+ps --forest showed parent-child tree hierarchy while children were sleeping

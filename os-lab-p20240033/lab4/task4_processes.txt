@@ -1,0 +1,310 @@
+=== Task 4: Process Management ===
+--- Current processes (your user) ---
+    PID TTY          TIME CMD
+   3068 ?        00:00:00 systemd
+   3074 ?        00:00:00 (sd-pam)
+   3087 ?        00:00:00 pipewire
+   3090 ?        00:00:00 pipewire
+   3097 ?        00:00:00 wireplumber
+   3098 ?        00:00:00 pipewire-pulse
+   3099 ?        00:00:00 gnome-keyring-d
+   3100 ?        00:00:00 dbus-daemon
+   3142 ?        00:00:00 xdg-document-po
+   3146 ?        00:00:00 xdg-permission-
+   3176 tty2     00:00:00 gdm-wayland-ses
+   3197 tty2     00:00:00 gnome-session-b
+   3247 ?        00:00:00 gcr-ssh-agent
+   3248 ?        00:00:00 gnome-session-c
+   3259 ?        00:00:00 gvfsd
+   3269 ?        00:00:00 gvfsd-fuse
+   3284 ?        00:00:00 gnome-session-b
+   3318 ?        00:03:08 gnome-shell
+   3320 ?        00:00:00 at-spi-bus-laun
+   3330 ?        00:00:00 dbus-daemon
+   3371 ?        00:00:00 at-spi2-registr
+   3390 ?        00:00:00 gnome-shell-cal
+   3410 ?        00:00:00 evolution-sourc
+   3423 ?        00:00:00 gjs
+   3431 ?        00:00:00 ibus-daemon
+   3433 ?        00:00:00 gsd-a11y-settin
+   3434 ?        00:00:00 gsd-color
+   3437 ?        00:00:00 gsd-datetime
+   3438 ?        00:00:00 gsd-housekeepin
+   3442 ?        00:00:00 gsd-keyboard
+   3443 ?        00:00:00 gsd-media-keys
+   3446 ?        00:00:00 gsd-power
+   3447 ?        00:00:00 gsd-print-notif
+   3448 ?        00:00:00 gsd-rfkill
+   3449 ?        00:00:00 gsd-screensaver
+   3451 ?        00:00:00 gsd-sharing
+   3455 ?        00:00:00 gsd-smartcard
+   3456 ?        00:00:00 gsd-sound
+   3457 ?        00:00:00 gsd-wacom
+   3466 ?        00:00:00 gsd-disk-utilit
+   3468 ?        00:00:02 vmtoolsd
+   3469 ?        00:00:00 evolution-alarm
+   3617 ?        00:00:00 goa-daemon
+   3639 ?        00:00:00 gsd-printer
+   3662 ?        00:00:00 evolution-calen
+   3713 ?        00:00:00 ibus-memconf
+   3716 ?        00:00:00 goa-identity-se
+   3717 ?        00:00:01 ibus-extension-
+   3718 ?        00:00:00 Xwayland
+   3721 ?        00:00:00 ibus-portal
+   3733 ?        00:00:00 evolution-addre
+   3755 ?        00:00:00 gvfs-udisks2-vo
+   3762 ?        00:00:00 gvfs-goa-volume
+   3770 ?        00:00:00 gvfs-afc-volume
+   3776 ?        00:00:00 gvfs-mtp-volume
+   3781 ?        00:00:00 gvfs-gphoto2-vo
+   3798 ?        00:00:00 ibus-engine-sim
+   3825 ?        00:00:00 dconf-service
+   3843 ?        00:00:00 gvfsd-trash
+   3876 ?        00:00:00 tracker-miner-f
+   3878 ?        00:00:00 xdg-desktop-por
+   3897 ?        00:00:00 xdg-desktop-por
+   3903 ?        00:00:00 snapd-desktop-i
+   3919 ?        00:00:00 gjs
+   4009 ?        00:00:00 gjs
+   4036 ?        00:00:00 gsd-xsettings
+   4066 ?        00:00:00 xdg-desktop-por
+   4079 ?        00:00:00 gvfsd-metadata
+   4083 ?        00:00:00 snapd-desktop-i
+   4128 ?        00:00:00 ibus-x11
+   4137 ?        00:00:00 mutter-x11-fram
+   4328 ?        00:00:03 gnome-terminal-
+   4398 pts/0    00:00:00 bash
+   4415 ?        00:00:00 snap
+   5727 ?        00:00:00 update-notifier
+   7251 ?        00:05:17 firefox
+   7319 ?        00:00:00 crashhelper
+   7386 ?        00:00:00 forkserver
+   7389 ?        00:00:00 Socket Process
+   7422 ?        00:00:01 Privileged Cont
+   7432 ?        00:00:00 RDD Process
+   7621 ?        00:00:00 WebExtensions
+   7935 ?        00:00:00 Utility Process
+   8085 ?        00:01:35 Isolated Web Co
+   8088 ?        00:00:14 Isolated Web Co
+   8109 ?        00:00:08 Isolated Web Co
+   8168 ?        00:00:00 Web Content
+   8243 ?        00:00:07 nautilus
+   8264 ?        00:00:00 gvfsd-recent
+   8361 ?        00:00:00 Web Content
+   8417 ?        00:00:00 Web Content
+   9694 pts/0    00:00:00 ps
+--- All processes (snapshot) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.2  0.3  23484 14372 ?        Ss   20:16   0:03 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    20:16   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    20:16   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   20:16   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   20:16   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   20:16   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   20:16   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   20:16   0:00 [kworker/R-netns]
+root          11  0.0  0.0      0     0 ?        I<   20:16   0:00 [kworker/0:0H-kblockd]
+root          12  0.0  0.0      0     0 ?        I    20:16   0:00 [kworker/u512:0-ipv6_addrconf]
+root          13  0.0  0.0      0     0 ?        I<   20:16   0:00 [kworker/R-mm_percpu_wq]
+root          14  0.0  0.0      0     0 ?        S    20:16   0:00 [ksoftirqd/0]
+root          15  0.0  0.0      0     0 ?        I    20:16   0:00 [rcu_preempt]
+root          16  0.0  0.0      0     0 ?        S    20:16   0:00 [rcu_exp_par_gp_kthread_worker/1]
+root          17  0.0  0.0      0     0 ?        S    20:16   0:00 [rcu_exp_gp_kthread_worker]
+root          18  0.0  0.0      0     0 ?        S    20:16   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    20:16   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    20:16   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    20:16   0:00 [cpuhp/1]
+--- Process tree ---
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           2       0  0 20:16 ?        00:00:00 [kthreadd]
+root           3       2  0 20:16 ?        00:00:00  \_ [pool_workqueue_release]
+root           4       2  0 20:16 ?        00:00:00  \_ [kworker/R-rcu_gp]
+root           5       2  0 20:16 ?        00:00:00  \_ [kworker/R-sync_wq]
+root           6       2  0 20:16 ?        00:00:00  \_ [kworker/R-kvfree_rcu_reclaim]
+root           7       2  0 20:16 ?        00:00:00  \_ [kworker/R-slub_flushwq]
+root           8       2  0 20:16 ?        00:00:00  \_ [kworker/R-netns]
+root          11       2  0 20:16 ?        00:00:00  \_ [kworker/0:0H-kblockd]
+root          12       2  0 20:16 ?        00:00:00  \_ [kworker/u512:0-ipv6_addrconf]
+root          13       2  0 20:16 ?        00:00:00  \_ [kworker/R-mm_percpu_wq]
+root          14       2  0 20:16 ?        00:00:00  \_ [ksoftirqd/0]
+root          15       2  0 20:16 ?        00:00:00  \_ [rcu_preempt]
+root          16       2  0 20:16 ?        00:00:00  \_ [rcu_exp_par_gp_kthread_worker/1]
+root          17       2  0 20:16 ?        00:00:00  \_ [rcu_exp_gp_kthread_worker]
+root          18       2  0 20:16 ?        00:00:00  \_ [migration/0]
+root          19       2  0 20:16 ?        00:00:00  \_ [idle_inject/0]
+root          20       2  0 20:16 ?        00:00:00  \_ [cpuhp/0]
+root          21       2  0 20:16 ?        00:00:00  \_ [cpuhp/1]
+root          22       2  0 20:16 ?        00:00:00  \_ [idle_inject/1]
+root          23       2  0 20:16 ?        00:00:00  \_ [migration/1]
+root          24       2  0 20:16 ?        00:00:00  \_ [ksoftirqd/1]
+root          29       2  0 20:16 ?        00:00:00  \_ [kdevtmpfs]
+root          30       2  0 20:16 ?        00:00:00  \_ [kworker/R-inet_frag_wq]
+root          31       2  0 20:16 ?        00:00:00  \_ [rcu_tasks_kthread]
+root          32       2  0 20:16 ?        00:00:00  \_ [rcu_tasks_rude_kthread]
+root          33       2  0 20:16 ?        00:00:00  \_ [rcu_tasks_trace_kthread]
+root          34       2  0 20:16 ?        00:00:00  \_ [kauditd]
+root          35       2  0 20:16 ?        00:00:00  \_ [khungtaskd]
+root          36       2  0 20:16 ?        00:00:00  \_ [oom_reaper]
+--- Top 10 CPU consumers (via ps) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+bluem       7251 22.4 15.1 12511300 601788 ?     Sl   20:24   5:44 /snap/firefox/8107/usr/lib/firefox/firefox
+bluem       3318 12.8  6.3 3994552 250240 ?      Ssl  20:23   3:30 /usr/bin/gnome-shell
+bluem       8085  6.5 13.1 3089272 520556 ?      Sl   20:24   1:41 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43023 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fb8b45b4-8862-4e6a-90f5-fad7b1575d44} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 7 tab
+bluem       8088  1.1  5.5 2729580 218204 ?      Sl   20:24   0:17 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43023 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {d225a117-26a1-41fc-a643-24e04b538909} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 8 tab
+bluem       8243  0.6  5.4 1514780 214828 ?      Sl   20:25   0:09 /usr/bin/nautilus --gapplication-service
+root        1173  0.6  0.6 1924264 26196 ?       Ssl  20:16   0:12 /snap/snapd/current/usr/lib/snapd/snapd
+bluem       8109  0.6  5.1 2710932 202336 ?      Sl   20:24   0:09 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43077 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {0589d45f-1ae1-41b1-8069-2ad60b3f2f63} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 9 tab
+bluem       4328  0.2  1.2 709636 51448 ?        Ssl  20:23   0:04 /usr/libexec/gnome-terminal-server
+root        9850  0.2  0.0      0     0 ?        I    20:49   0:00 [kworker/u514:0-events_power_efficient]
+root         395  0.2  0.0      0     0 ?        S    20:16   0:04 [irq/16-vmwgfx]
+--- Top 10 memory consumers ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+bluem       7251 22.4 15.0 12511300 597524 ?     Sl   20:24   5:46 /snap/firefox/8107/usr/lib/firefox/firefox
+bluem       8085  6.6 13.1 3089272 520752 ?      Sl   20:24   1:42 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43023 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fb8b45b4-8862-4e6a-90f5-fad7b1575d44} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 7 tab
+bluem       3318 12.8  6.3 3994552 250364 ?      Ssl  20:23   3:31 /usr/bin/gnome-shell
+bluem       8088  1.1  5.5 2729564 218188 ?      Sl   20:24   0:17 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43023 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {d225a117-26a1-41fc-a643-24e04b538909} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 8 tab
+bluem       8243  0.6  5.4 1514780 214828 ?      Sl   20:25   0:09 /usr/bin/nautilus --gapplication-service
+bluem       8109  0.6  5.1 2710932 202336 ?      Sl   20:24   0:09 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43077 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {0589d45f-1ae1-41b1-8069-2ad60b3f2f63} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 9 tab
+bluem       7422  0.1  3.4 2670860 138136 ?      Sl   20:24   0:02 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:34958 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {6cfe968a-0930-41bd-89cc-cff7b3f13e3d} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 3 tab
+bluem       7621  0.0  2.3 2613252 93340 ?       Sl   20:24   0:00 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:35015 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {688c60fb-2838-4f1f-85a1-84d07f2bc640} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 5 tab
+bluem       8417  0.0  1.8 2570156 71500 ?       Sl   20:26   0:00 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43129 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {e8df3a3f-42ca-4484-824f-212ff3793097} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 12 tab
+bluem       8361  0.0  1.8 2570156 71420 ?       Sl   20:26   0:00 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43129 -prefMapHandle 1:283579 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {4fa1cb19-0336-4fba-a206-ced3b5574cdc} -parentPid 7251 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 11 tab
+--- Background jobs ---
+[1]- 10427 Running                 sleep 300 &
+[2]+ 10428 Running                 sleep 500 &
+--- After Ctrl+Z (stopped job) ---
+[1]  10427 Running                 sleep 300 &
+[2]- 10428 Running                 sleep 500 &
+[3]+ 10435 Stopped                 sleep 600
+--- After bg ---
+[1]  10427 Running                 sleep 300 &
+[2]- 10428 Running                 sleep 500 &
+[3]+ 10435 Running                 sleep 600 &
+--- After terminating all sleep jobs ---
+[1]- 10427 Running                 sleep 300 &
+[2]+ 10428 Running                 sleep 500 &
+Started sleep with PID: 10479
+--- Available signals ---
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+--- After SIGSTOP ---
+    PID STAT CMD
+  10479 T    sleep 1000
+--- After SIGCONT ---
+    PID STAT CMD
+  10479 S    sleep 1000
+--- After SIGTERM ---
+    PID STAT CMD
+--- nohup demo ---
+nohup sleep PID: 10735
+ls: cannot access 'nohup.out': No such file or directory
+--- Challenge Process Management ---
+    PID TTY          TIME CMD
+   3176 tty2     00:00:00 gdm-wayland-ses
+   3197 tty2     00:00:00  \_ gnome-session-b
+   3068 ?        00:00:00 systemd
+   3074 ?        00:00:00  \_ (sd-pam)
+   3087 ?        00:00:01  \_ pipewire
+   3090 ?        00:00:00  \_ pipewire
+   3097 ?        00:00:00  \_ wireplumber
+   3098 ?        00:00:00  \_ pipewire-pulse
+   3099 ?        00:00:00  \_ gnome-keyring-d
+   3100 ?        00:00:00  \_ dbus-daemon
+   3142 ?        00:00:00  \_ xdg-document-po
+   3146 ?        00:00:00  \_ xdg-permission-
+   3247 ?        00:00:00  \_ gcr-ssh-agent
+   3248 ?        00:00:00  \_ gnome-session-c
+   3259 ?        00:00:00  \_ gvfsd
+   8264 ?        00:00:00  |   \_ gvfsd-recent
+  10246 ?        00:00:00  |   \_ gvfsd-trash
+   3269 ?        00:00:00  \_ gvfsd-fuse
+   3284 ?        00:00:00  \_ gnome-session-b
+   3320 ?        00:00:00  |   \_ at-spi-bus-laun
+   3330 ?        00:00:00  |   |   \_ dbus-daemon
+   3466 ?        00:00:00  |   \_ gsd-disk-utilit
+   3469 ?        00:00:00  |   \_ evolution-alarm
+   5727 ?        00:00:00  |   \_ update-notifier
+   3318 ?        00:04:58  \_ gnome-shell
+   3718 ?        00:00:00  |   \_ Xwayland
+   4009 ?        00:00:00  |   \_ gjs
+   4137 ?        00:00:00  |   \_ mutter-x11-fram
+   7251 ?        00:08:07  |   \_ firefox
+   7386 ?        00:00:00  |       \_ forkserver
+   7389 ?        00:00:00  |           \_ Socket Process
+   7422 ?        00:00:02  |           \_ Privileged Cont
+   7432 ?        00:00:00  |           \_ RDD Process
+   7621 ?        00:00:00  |           \_ WebExtensions
+   7935 ?        00:00:00  |           \_ Utility Process
+   8085 ?        00:02:33  |           \_ Isolated Web Co
+   8088 ?        00:00:23  |           \_ Isolated Web Co
+   8109 ?        00:00:10  |           \_ Isolated Web Co
+   8168 ?        00:00:00  |           \_ Web Content
+   8361 ?        00:00:00  |           \_ Web Content
+   8417 ?        00:00:00  |           \_ Web Content
+   3371 ?        00:00:00  \_ at-spi2-registr
+   3390 ?        00:00:00  \_ gnome-shell-cal
+   3410 ?        00:00:00  \_ evolution-sourc
+   3423 ?        00:00:00  \_ gjs
+   3431 ?        00:00:01  \_ ibus-daemon
+   3713 ?        00:00:00  |   \_ ibus-memconf
+   3717 ?        00:00:01  |   \_ ibus-extension-
+   3798 ?        00:00:00  |   \_ ibus-engine-sim
+   3433 ?        00:00:00  \_ gsd-a11y-settin
+   3434 ?        00:00:00  \_ gsd-color
+   3437 ?        00:00:00  \_ gsd-datetime
+   3438 ?        00:00:00  \_ gsd-housekeepin
+   3442 ?        00:00:00  \_ gsd-keyboard
+   3443 ?        00:00:00  \_ gsd-media-keys
+   3446 ?        00:00:00  \_ gsd-power
+   3447 ?        00:00:00  \_ gsd-print-notif
+   3448 ?        00:00:00  \_ gsd-rfkill
+   3449 ?        00:00:00  \_ gsd-screensaver
+   3451 ?        00:00:00  \_ gsd-sharing
+   3455 ?        00:00:00  \_ gsd-smartcard
+   3456 ?        00:00:00  \_ gsd-sound
+   3457 ?        00:00:00  \_ gsd-wacom
+   3468 ?        00:00:03  \_ vmtoolsd
+   3617 ?        00:00:00  \_ goa-daemon
+   3639 ?        00:00:00  \_ gsd-printer
+   3662 ?        00:00:00  \_ evolution-calen
+   3716 ?        00:00:00  \_ goa-identity-se
+   3721 ?        00:00:00  \_ ibus-portal
+   3733 ?        00:00:00  \_ evolution-addre
+   3755 ?        00:00:00  \_ gvfs-udisks2-vo
+   3762 ?        00:00:00  \_ gvfs-goa-volume
+   3770 ?        00:00:00  \_ gvfs-afc-volume
+   3776 ?        00:00:00  \_ gvfs-mtp-volume
+   3781 ?        00:00:00  \_ gvfs-gphoto2-vo
+   3825 ?        00:00:00  \_ dconf-service
+   3876 ?        00:00:00  \_ tracker-miner-f
+   3878 ?        00:00:00  \_ xdg-desktop-por
+   3897 ?        00:00:00  \_ xdg-desktop-por
+   3903 ?        00:00:00  \_ snapd-desktop-i
+   4083 ?        00:00:00  |   \_ snapd-desktop-i
+   3919 ?        00:00:00  \_ gjs
+   4036 ?        00:00:00  \_ gsd-xsettings
+   4066 ?        00:00:00  \_ xdg-desktop-por
+   4079 ?        00:00:00  \_ gvfsd-metadata
+   4128 ?        00:00:00  \_ ibus-x11
+   4328 ?        00:00:08  \_ gnome-terminal-
+   4398 pts/0    00:00:00  |   \_ bash
+  10758 pts/0    00:00:00  |       \_ sleep
+  10760 pts/0    00:00:00  |       \_ sleep
+  10761 pts/0    00:00:00  |       \_ sleep
+  10762 pts/0    00:00:00  |       \_ ps
+   4415 ?        00:00:00  \_ snap
+   7319 ?        00:00:00  \_ crashhelper
+   8243 ?        00:00:12  \_ nautilus
+--- bash PIDs ---
+4398
