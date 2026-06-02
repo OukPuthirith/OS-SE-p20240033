@@ -1,0 +1,6 @@
+=== guestbook permissions ===
+-rw------- 1 se-ouk-puthirith se-ouk-puthirith 36 Jun  2 13:56 /home/se-ouk-puthirith/guestbook.txt
+=== sign_book permissions ===
+-rwsr-xr-x 1 se-ouk-puthirith se-ouk-puthirith 16096 Jun  2 13:53 /home/se-ouk-puthirith/bin/sign_book
+=== guestbook contents ===
+Visitor signed: Hello from Vathanak

@@ -1,0 +1,6 @@
+========================================
+Welcome, se-ouk-puthirith
+Users currently logged in: 5
+Server uptime: up 1 week, 21 hours, 12 minutes
+Random tech quote: There is no place like 127.0.0.1.
+========================================

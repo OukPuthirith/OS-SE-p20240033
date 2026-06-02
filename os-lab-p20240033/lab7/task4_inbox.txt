@@ -1,0 +1,4 @@
+=== inbox permissions ===
+drwx-wx-wx 2 se-ouk-puthirith se-ouk-puthirith 4096 Jun  2 13:43 /home/se-ouk-puthirith/public_inbox
+=== inbox files as owner ===
+total 0

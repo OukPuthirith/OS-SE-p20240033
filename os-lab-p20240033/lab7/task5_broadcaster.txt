@@ -1,0 +1,6 @@
+=== broadcaster script ===
+-rwxrwxr-x 1 se-ouk-puthirith se-ouk-puthirith 331 Jun  2 13:48 /home/se-ouk-puthirith/bin/broadcaster
+=== outbox permissions ===
+drwxr-xr-x 2 se-ouk-puthirith se-ouk-puthirith 4096 Jun  2 13:48 /home/se-ouk-puthirith/public_outbox
+=== secret.txt ===
+filesystem - 2026-06-02 13:48:33

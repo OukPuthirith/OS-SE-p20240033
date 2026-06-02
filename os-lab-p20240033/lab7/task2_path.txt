@@ -1,0 +1,7 @@
+=== PATH ===
+/home/se-ouk-puthirith/bin:/home/se-ouk-puthirith/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+=== warmup location ===
+/home/se-ouk-puthirith/bin/warmup
+=== warmup command output ===
+Hello from my first script! My current directory is:
+/home/se-ouk-puthirith
