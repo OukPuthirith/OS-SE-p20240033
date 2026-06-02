@@ -1,29 +1,114 @@
-# Lab 7 Questions
+# OS Lab 7 Submission — Bash Scripting, Permissions & Server Automation
 
-## 1. Why did `warmup` fail before you added execute permission?
+- **Student Name:** Ouk Puthirith
+- **Student ID:** p2040033
 
-The `warmup` script failed because it did not have the execute (`x`) permission set. Linux only allows files marked as executable to be run as programs. After using `chmod +x warmup`, the script became executable and could run successfully.
+---
 
-## 2. What does adding `~/bin` to `PATH` allow you to do?
+## Task Output Files
 
-Adding `~/bin` to the `PATH` allows the shell to automatically search for executable files in that directory. This means scripts such as `warmup`, `broadcaster`, `harvester`, and `mailman` can be run by typing their names directly instead of using `./scriptname` or specifying the full path.
+Make sure all of the following files are present in your `lab7/` folder:
 
-## 3. Why does `chmod 733 public_inbox` allow classmates to drop files but not list the inbox?
+- [ ] `task1_warmup.txt`
+- [ ] `task2_path.txt`
+- [ ] `task3_doorstep.txt`
+- [ ] `task4_inbox.txt`
+- [ ] `task5_broadcaster.txt`
+- [ ] `task6_guestbook.txt`
+- [ ] `harvest_report.txt`
+- [ ] `task8_mailman.txt`
+- [ ] `sign_book.c`
+- [ ] `scripts/warmup`
+- [ ] `scripts/broadcaster`
+- [ ] `scripts/harvester`
+- [ ] `scripts/mailman`
+- [ ] `scripts/sign_book_binary`
 
-Permission `733` gives the owner full access (`rwx`) and gives everyone else write and execute permissions (`wx`) without read permission. The write permission allows classmates to create files in the directory, while the lack of read permission prevents them from listing or viewing its contents.
+---
 
-## 4. Why does Linux ignore SUID on shell scripts, and why did we use a compiled C program instead?
+## Screenshots
 
-Linux ignores SUID on shell scripts because it can create security vulnerabilities, such as race-condition attacks and privilege escalation. A compiled C program is used instead because the operating system can safely apply the SUID bit to a binary executable, allowing it to run with the owner's privileges.
+Insert your screenshots below.
 
-## 5. What is the difference between `>` and `>>` in Bash redirection?
+### Screenshot 1 — Task 1: Warm-Up Script
+Show `cat task1_warmup.txt` with the executable `warmup` script and successful output.
 
-The `>` operator creates a new file or overwrites the contents of an existing file. The `>>` operator appends new output to the end of a file without removing its existing contents.
+![warmup](images/task1_warmup.png)
 
-## 6. How did your `harvester` avoid reading files that were missing or not readable?
+---
 
-The `harvester` script used conditional tests before reading each file. It checked whether the file existed with `[ -f "$target_file" ]` and whether it was readable with `[ -r "$target_file" ]`. Only files that passed both tests were processed.
+### Screenshot 2 — Task 2: PATH Setup
+Show `cat task2_path.txt` with your `PATH`, `which warmup`, and running `warmup` by name.
 
-## 7. What permission problems did you or your classmates need to fix during the lab?
+![path](images/task2_path.png)
 
-Several permission issues had to be fixed during the lab. Common problems included scripts that were not executable until `chmod +x` was used, inbox directories with incorrect permissions that prevented classmates from writing files, outbox files that were not readable by others, and home directories that required execute permission so classmates could access shared resources. These issues were resolved by applying the correct `chmod` settings.
+---
+
+### Screenshot 3 — Task 3: Doorstep Message
+Show `cat task3_doorstep.txt` with username, users online, uptime, and random quote.
+
+![doorstep](images/task3_doorstep.png)
+
+---
+
+### Screenshot 4 — Task 4: Secure Mailbox
+Show `cat task4_inbox.txt` with `public_inbox` permissions and a test file from a classmate.
+
+![inbox](images/task4_inbox.png)
+
+---
+
+### Screenshot 5 — Task 5: Broadcaster
+Show `cat task5_broadcaster.txt` with the broadcaster script evidence and `secret.txt`.
+
+![broadcaster](images/task5_broadcaster.png)
+
+---
+
+### Screenshot 6 — Task 6: VIP Guestbook
+Show `cat task6_guestbook.txt` with guestbook permissions, SUID binary permissions, and guestbook contents.
+
+![guestbook](images/task6_guestbook.png)
+
+---
+
+### Screenshot 7 — Task 7: Data Harvester
+Show `cat harvest_report.txt` containing secrets collected from classmates.
+
+![harvester](images/task7_harvester.png)
+
+---
+
+### Screenshot 8 — Task 8: Mailman Bot
+Show `cat task8_mailman.txt` with mailman output and messages received in your inbox.
+
+![mailman](images/task8_mailman.png)
+
+---
+
+## Answers to Lab Questions
+
+1. **Why did `warmup` fail before you added execute permission?**
+   The warmup script failed because it did not have execute permission. Linux requires the execute (x) permission before a file can be run as a program. After using chmod +x warmup, the script became executable and ran successfully.
+
+2. **What does adding `~/bin` to `PATH` allow you to do?**
+   Adding ~/bin to the PATH allows the shell to search that directory for executable files. This lets me run my scripts by typing their names directly, such as warmup or broadcaster, without specifying the full path or using ./.
+
+3. **Why does `chmod 733 public_inbox` allow classmates to drop files but not list the inbox?**
+   The permission 733 gives the owner full permissions (rwx) while everyone else gets write and execute permissions (wx). This allows classmates to create files in the directory but prevents them from reading or listing its contents because they do not have read permission.
+
+4. **Why does Linux ignore SUID on shell scripts, and why did we use a compiled C program instead?**
+   Linux ignores SUID on shell scripts for security reasons because shell scripts are vulnerable to race conditions and privilege escalation attacks. A compiled C program can safely use the SUID bit, so we used a C program to demonstrate SUID behavior while allowing controlled access to the guestbook file.
+
+5. **What is the difference between `>` and `>>` in Bash redirection?**
+   The > operator writes output to a file and overwrites any existing contents. The >> operator appends output to the end of a file without removing the existing contents.
+
+6. **How did your `harvester` avoid reading files that were missing or not readable?**
+   The harvester script checked each target file using [ -f "$target_file" ] to ensure the file existed and [ -r "$target_file" ] to verify it was readable. The script only processed files that passed both checks.
+7. **What permission problems did you or your classmates need to fix during the lab?**
+   Common permission issues included scripts that were not executable, inbox directories that did not allow classmates to write files, outbox files that were not readable by other users, and home directories that blocked access to shared resources. These issues were resolved by applying the correct permissions using chmod.
+---
+
+## Reflection
+
+This lab taught me how Bash scripting, file permissions, and automation work together on a shared Linux system. I learned how to create executable scripts, configure the PATH environment variable, manage secure directory permissions, and automate tasks using loops, variables, and file redirection. The lab also demonstrated the importance of proper permission settings when multiple users interact on the same server. Overall, it provided practical experience with Linux administration, scripting, and secure resource sharing.
