@@ -1,0 +1,1 @@
+drwxrws-wt 2 root devteam 4096 Jun  4 08:57 /opt/techcorp/dropbox
