@@ -1,0 +1,16 @@
+Run 1 final inventory: -2
+Run 2 final inventory: 96
+Run 3 final inventory: 96
+Run 4 final inventory: 98
+Run 5 final inventory: 96
+
+Explanation:
+The inventory values differ across runs because multiple bot processes
+read the same inventory value before any of them write back the updated
+value. This is a TOC-TOU (Time-of-Check to Time-of-Use) race condition —
+the OS scheduler can context-switch between the read and the write steps
+of different processes, causing some purchases to overwrite each other.
+The final value depends on which process runs last, not how many ran.
+Run 1 even produced -2, meaning the inventory went below zero because
+two processes both read 0, both passed the availability check, and both
+subtracted 2, writing -2 back to the file.

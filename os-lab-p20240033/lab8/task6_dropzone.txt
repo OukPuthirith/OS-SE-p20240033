@@ -1,0 +1,8 @@
+=== drop zone permissions ===
+drwxrwxrwt 2 se-ouk-puthirith se-ouk-puthirith 4096 Jun  9 14:19 /home/se-ouk-puthirith/vendor_reports
+=== drop zone files ===
+total 8
+-rw-rw-r-- 1 se-ouk-puthirith se-ouk-puthirith 27 Jun  9 14:15 my_rules.txt
+-rw-rw-r-- 1 se-mi-sorakmony  se-mi-sorakmony  15 Jun  9 14:19 partner_report.txt
+=== partner deletion result ===
+Partner received: Operation not permitted when trying to delete my_rules.txt

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+script_name="$(basename "$0")"
+
+for file in *; do
+    # skip if not a regular file
+    [ -f "$file" ] || continue
+
+    # skip the script itself
+    [ "$file" = "$script_name" ] && continue
+
+    # get the extension
+    ext="${file##*.}"
+
+    # skip files with no extension
+    if [ "$ext" = "$file" ]; then
+        continue
+    fi
+
+    # create folder named after extension if needed
+    mkdir -p "$ext"
+
+    # move file into folder
+    mv "$file" "$ext/"
+
+    echo "Moved $file -> $ext/"
+done
+
+echo "Cleanup complete."
