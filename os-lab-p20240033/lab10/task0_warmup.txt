@@ -1,0 +1,11 @@
+=== script permissions ===
+-rwxrwxr-x 1 se-ouk-puthirith se-ouk-puthirith 405 Jun 16 13:26 /home/se-ouk-puthirith/bin/automation_demo
+=== log contents ===
+2026-06-16 13:27:10 | automation_demo started by user se-ouk-puthirith
+2026-06-16 13:27:10 | working directory is /home/se-ouk-puthirith/OS-SE-p20240033/os-lab-p20240033/lab10
+2026-06-16 13:27:10 | home directory is /home/se-ouk-puthirith
+2026-06-16 13:27:10 | automation_demo finished successfully
+2026-06-16 13:27:10 | automation_demo started by user se-ouk-puthirith
+2026-06-16 13:27:10 | working directory is /home/se-ouk-puthirith/OS-SE-p20240033/os-lab-p20240033/lab10
+2026-06-16 13:27:10 | home directory is /home/se-ouk-puthirith
+2026-06-16 13:27:10 | automation_demo finished successfully

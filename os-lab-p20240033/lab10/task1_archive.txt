@@ -1,0 +1,13 @@
+=== archive sizes ===
+-rw-rw-r-- 1 se-ouk-puthirith se-ouk-puthirith 1.3K Jun 16 13:28 /home/se-ouk-puthirith/os-lab-automation/project_compressed.tar.gz
+-rw-rw-r-- 1 se-ouk-puthirith se-ouk-puthirith  10K Jun 16 13:28 /home/se-ouk-puthirith/os-lab-automation/project_plain.tar
+=== contents of compressed archive ===
+project/
+project/README.md
+project/src/
+project/src/widget.py
+project/docs/
+project/docs/changelog.txt
+project/docs/notes.txt
+=== restore verification ===
+RESTORE OK

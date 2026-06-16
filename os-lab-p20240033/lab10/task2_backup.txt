@@ -1,0 +1,23 @@
+=== backup script permissions ===
+-rwxrwxr-x 1 se-ouk-puthirith se-ouk-puthirith 726 Jun 16 13:29 /home/se-ouk-puthirith/bin/backup_project
+=== archives kept (should be 3) ===
+/home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133009.tar.gz
+/home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133008.tar.gz
+/home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133007.tar.gz
+=== backup log ===
+2026-06-16 13:30:06 | starting backup of /home/se-ouk-puthirith/os-lab-automation/project
+2026-06-16 13:30:06 | created archive /home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133006.tar.gz
+2026-06-16 13:30:06 | no old archives to prune
+2026-06-16 13:30:06 | backup finished successfully
+2026-06-16 13:30:07 | starting backup of /home/se-ouk-puthirith/os-lab-automation/project
+2026-06-16 13:30:07 | created archive /home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133007.tar.gz
+2026-06-16 13:30:07 | no old archives to prune
+2026-06-16 13:30:07 | backup finished successfully
+2026-06-16 13:30:08 | starting backup of /home/se-ouk-puthirith/os-lab-automation/project
+2026-06-16 13:30:08 | created archive /home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133008.tar.gz
+2026-06-16 13:30:08 | no old archives to prune
+2026-06-16 13:30:08 | backup finished successfully
+2026-06-16 13:30:09 | starting backup of /home/se-ouk-puthirith/os-lab-automation/project
+2026-06-16 13:30:09 | created archive /home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133009.tar.gz
+2026-06-16 13:30:09 | pruned old archive /home/se-ouk-puthirith/os-lab-automation/backups/project_20260616_133006.tar.gz
+2026-06-16 13:30:09 | backup finished successfully
