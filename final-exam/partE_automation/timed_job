@@ -1,0 +1,20 @@
+#!/bin/bash
+# Script executed by cron tasks to update internal log traces
+
+LOG_DIR="/home/$(whoami)/final-exam/partE_automation/logs"
+LOG_FILE="$LOG_DIR/cron_recurring.log"
+
+# Create directories if they do not exist
+mkdir -p "$LOG_DIR"
+
+# 🔴 LIVE CURVEBALL E HOOK GOES HERE 🔴
+# If your curveball instructions enforce an idempotent token guard condition, 
+# you will read your issued token string and place this guard code here:
+#
+# if grep -q "YOUR_ASSIGNED_TOKEN" "$LOG_DIR/cron_oneshot.log" 2>/dev/null; then
+#     echo "$(date): Token match found. Skipping idempotent execution." >> "$LOG_FILE"
+#     exit 0
+# fi
+
+# Standard logging trace execution
+echo "[CRON EXECUTION] Ran at: $(date '+%Y-%m-%d %H:%M:%S')" >> "$LOG_FILE"
