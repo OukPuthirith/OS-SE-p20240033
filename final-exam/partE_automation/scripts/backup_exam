@@ -1,0 +1,3 @@
+#!/bin/bash
+mkdir -p ~/exam-backups
+tar -czf "~/exam-backups/final-exam-$(date +%s).tar.gz" -C "/home/se-ouk-puthirith/OS-SE-p20240033" final-exam 2>/dev/null

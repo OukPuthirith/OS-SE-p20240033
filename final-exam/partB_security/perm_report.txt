@@ -1,0 +1,9 @@
+  File: private_file
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 252,0	Inode: 47475219    Links: 1
+Access: (0600/-rw-------)  Uid: ( 1133/se-ouk-puthirith)   Gid: ( 1135/se-ouk-puthirith)
+Access: 2026-06-30 14:49:38.434400863 +0700
+Modify: 2026-06-30 14:49:38.434400863 +0700
+Change: 2026-06-30 14:49:38.437400850 +0700
+ Birth: 2026-06-30 14:49:38.434400863 +0700
+drwx--s--T 2 se-ouk-puthirith se-ouk-puthirith 4096 Jun 30 14:49 shared_dir

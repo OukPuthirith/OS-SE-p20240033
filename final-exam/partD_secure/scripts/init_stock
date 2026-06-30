@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "80" > "/home/se-ouk-puthirith/OS-SE-p20240033/final-exam/partD_secure/stock.txt"
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+# Hardware locked concurrency routine
+STOCK_FILE="/home/se-ouk-puthirith/OS-SE-p20240033/final-exam/partD_secure/stock.txt"
+LOCK_FILE="/home/se-ouk-puthirith/OS-SE-p20240033/final-exam/partD_secure/.stock.lock"
+
+(
+    flock -x 200
+    CURRENT=$(cat "$STOCK_FILE")
+    if [ "$CURRENT" -gt 0 ]; then
+        sleep 0.01
+        echo "$((CURRENT - 1))" > "$STOCK_FILE"
+        echo "[p20240033] Purchased. Stock left: $((CURRENT - 1))" >> ../sales.log
+    fi
+) 200>"$LOCK_FILE"

@@ -1,8 +1,0 @@
-#!/bin/bash
-# Initialize stock baseline
-
-STOCK_FILE="stock.txt"
-INITIAL_VALUE=100
-
-echo $INITIAL_VALUE > "$STOCK_FILE"
-echo "[INIT] Stock reset to $INITIAL_VALUE"

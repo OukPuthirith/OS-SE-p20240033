@@ -1,0 +1,6 @@
+#!/bin/bash
+# Concurrent execution driver launching 50 parallel instances
+for ((i=1; i<=50; i++)); do
+    ./buy_widget &
+done
+wait

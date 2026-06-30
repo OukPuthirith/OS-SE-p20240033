@@ -1,0 +1,13 @@
+#!/bin/bash
+# Strict array retention bounds mapping RETAIN_N=4
+RETAIN_N=4
+DEST_DIR="/home/se-ouk-puthirith/exam-backups"
+mkdir -p "$DEST_DIR"
+
+tar -czf "$DEST_DIR/proj-$(date +%s).tar.gz" -C "/home/se-ouk-puthirith/OS-SE-p20240033/final-exam/partE_automation" . 2>/dev/null
+
+# Prune excess keeping the 4 newest entries
+IFS=$'\n' BACKUPS=($(ls -t "$DEST_DIR"/proj-*.tar.gz 2>/dev/null))
+if [ "${#BACKUPS[@]}" -gt "$RETAIN_N" ]; then
+    for ((i=$RETAIN_N; i<${#BACKUPS[@]}; i++)); do rm -f "${BACKUPS[$i]}"; done
+fi

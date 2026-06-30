@@ -1,0 +1,3 @@
+#!/bin/bash
+msgs=("OrbitWorks Deployment Initialized" "Widget Pipeline Online" "System Secure")
+echo "User: $(whoami) | Logged-in: $(who -q | head -n1) | ${msgs[$((RANDOM % 3))]}"

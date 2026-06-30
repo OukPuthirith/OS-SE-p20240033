@@ -1,1 +1,6 @@
-    PID    SPID TTY          TIME CMD
+se-hai-+ 1588196 1427661 1588196  0    1 14:32 pts/6    00:00:00 ./thread_demo
+se-ouk-+ 1641136 1455941 1641136  0    4 14:49 pts/29   00:00:00 ./thread_demo
+se-ouk-+ 1641136 1455941 1641139  0    4 14:49 pts/29   00:00:00 ./thread_demo
+se-ouk-+ 1641136 1455941 1641140  0    4 14:49 pts/29   00:00:00 ./thread_demo
+se-ouk-+ 1641136 1455941 1641141  0    4 14:49 pts/29   00:00:00 ./thread_demo
+se-ouk-+ 1641138 1455941 1641138  0    1 14:49 pts/29   00:00:00 grep --color=auto thread_demo
