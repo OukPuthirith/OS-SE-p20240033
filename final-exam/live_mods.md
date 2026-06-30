@@ -9,15 +9,16 @@
 
 ## Curveball A — extra worker(s) that start after the others join
 
-- **Issued value:** `<N>` extra worker(s)
-- **Announced instruction:** <paste exactly what was announced>
-- **Live value(s) I acted on:** base PID = `<...>`; new LWP id(s) that appeared = `<...>`
+- **Issued value:** 2 extra workers
+- **Announced instruction:** Modify thread_demo.c to spawn 2 extra worker threads only after the primary 3 worker threads have finished execution and successfully joined back to the main thread.
+- **Live value(s) I acted on:** base PID = `24105`; new LWP id(s) that appeared = `24109, 24110`
 - **Commands:**
 
 ```bash
-# edit thread_demo.c to spawn N extra workers only AFTER the originals join
-# recompile, run, and capture the mapping showing the new LWP(s) appear then vanish
-<your commands>
+cd ~/OS-SE-p20240033/final-exam/partA_threads
+nano thread_demo.c
+gcc -pthread thread_demo.c -o thread_demo
+./thread_demo & ps -eLf | grep thread_demo > thread_map.txt
 ```
 
 - **Screenshot:**
@@ -38,6 +39,12 @@
 # add a per-buyer cap to buy_<product>: reject any single order above <N>
 # reset stock, re-run swarm, show it stays consistent AND respects the cap
 <your commands>
+cd ~/OS-SE-p20240033/final-exam/partD_secure/scripts
+nano buy_widget
+./init_stock
+./swarm
+./buy_widget "Cap_Tester" 6
+cat ../stock.txt
 ```
 
 - **Screenshot:**
@@ -58,6 +65,11 @@
 # add a guard to timed_job: refuse to run if today's <TOKEN> entry is already in the log
 # trigger it twice and show the 2nd run was skipped
 <your commands>
+cd ~/OS-SE-p20240033/final-exam/partE_automation/scripts
+nano timed_job
+./timed_job >> ../logs/cron_recurring.log
+./timed_job >> ../logs/cron_recurring.log
+cat ../logs/cron_recurring.log
 ```
 
 - **Screenshot:**
